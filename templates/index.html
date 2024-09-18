@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Prediction</title>
+</head>
+<body>
+    <h1>Predict Median House Value</h1>
+    <form method="POST" action="/predict">
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required><br><br>
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required><br><br>
+
+        <label for="housing_median_age">Housing Median Age:</label>
+        <input type="text" id="housing_median_age" name="housing_median_age" required><br><br>
+
+        <label for="total_rooms">Total Rooms:</label>
+        <input type="text" id="total_rooms" name="total_rooms" required><br><br>
+
+        <label for="total_bedrooms">Total Bedrooms:</label>
+        <input type="text" id="total_bedrooms" name="total_bedrooms" required><br><br>
+
+        <label for="population">Population:</label>
+        <input type="text" id="population" name="population" required><br><br>
+
+        <label for="households">Households:</label>
+        <input type="text" id="households" name="households" required><br><br>
+
+        <label for="median_income">Median Income:</label>
+        <input type="text" id="median_income" name="median_income" required><br><br>
+
+        <label for="proximity">Proximity to the Ocean:</label>
+        <select id="proximity" name="proximity" required>
+            <option value="<1H OCEAN"><1H OCEAN</option>
+            <option value="INLAND">INLAND</option>
+            <option value="ISLAND">ISLAND</option>
+            <option value="NEAR BAY">NEAR BAY</option>
+            <option value="NEAR OCEAN">NEAR OCEAN</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
